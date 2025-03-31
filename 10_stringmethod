@@ -1,0 +1,21 @@
+let username = "hardik"
+console.log(username.toUpperCase())
+console.log(username.slice(2,5))
+console.log(username.slice(2))
+console.log(username.replace("ar", "xyz"))
+let surname = "ale"
+console.log(username.concat(" ", surname))
+
+
+//............
+//etc etc etc (browse to know more)
+
+
+//quickquiz
+//using for loop to print string
+let string = "javascript"
+let result = "" 
+for(let i = 0;i<string.length;i++){
+    result += string[i]
+}
+console.log(result)
