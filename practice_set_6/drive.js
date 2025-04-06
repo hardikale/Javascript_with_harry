@@ -5,7 +5,7 @@ do {
 // document.body.innerHTML = (`AGE = ${age}`);
 
 const canDrive = (age) => {
-    age=>18?true:false;
+    return age>=18?true:false;
 }
 
 if (canDrive(age)) {
@@ -14,5 +14,7 @@ if (canDrive(age)) {
     alert("You cannot Drive !");
 }
 
-let again = confirm("Do you want the prompt again?");
-} while (again);
+
+   var again =  confirm("Do you want the prompt again?"); //if use let, it can,t be accessed outside loop
+
+} while (again==true);
