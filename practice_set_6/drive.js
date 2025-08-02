@@ -7,7 +7,11 @@ do {
 const canDrive = (age) => {
     return age>=18?true:false;
 }
-
+if (canDrive(age)<=0) {
+    console.error("Enter ")
+} else {
+    
+}
 if (canDrive(age)) {
     alert("You can Drive !");
 } else {

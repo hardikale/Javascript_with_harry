@@ -1,20 +1,21 @@
 
-//for in loops 
-// let a = {
-//     hardik : 23,
-//     sailesh : 43,
-//     kamal : 45,
-//     suraj: 566
-// }
+// for in loops 
 
-// for (let b in a){
-//     console.log("marks of " + b + " are " + a[b]);
-// }
+let a = {
+    hardik : 23,
+    sailesh : 43,
+    kamal : 45,
+    suraj: 566
+}
+
+for (let b in a){
+    console.log("marks of " + b + " is " + a[b]);
+}
 
 //for of loops  
 
-let n = [1,"hardik",true,null,undefined,];
+// let n = [1,"hardik",true,null,undefined,];
 
-for (a of n){
-    console.log(a);
-}
+// for (a of n){
+//     console.log(a);
+// }
