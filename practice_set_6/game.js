@@ -64,4 +64,4 @@ if(choose==2 && random==option[1]){
 //   } else {
 //     alert("You WIN");
 //   }
-// }
+// } 
