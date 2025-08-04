@@ -2,15 +2,14 @@
 
 do {
     let age = Number.parseInt(prompt("Enter your Age below:"));
-// document.body.innerHTML = (`AGE = ${age}`);
+document.body.innerHTML += (`AGE = ${age} `);
 
 const canDrive = (age) => {
     return age>=18?true:false;
 }
 if (canDrive(age)<=0) {
-    console.error("Enter ")
-} else {
-    
+    console.error("entered negetive or 0 ")  //this will be shown in console
+    break;
 }
 if (canDrive(age)) {
     alert("You can Drive !");
