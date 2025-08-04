@@ -1,4 +1,7 @@
+
+//---alert----
 alert("Hello! Your script works!");
+
 
 let a = Number.parseInt(prompt("Enter value for a:", "000"));
 alert(`${a} is of type ${typeof a}`);
