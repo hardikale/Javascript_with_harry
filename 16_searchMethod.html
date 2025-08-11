@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search Methods</title>
+</head>
+<body>
+    <div class="container">
+        <ul class="box">
+            <li class="list active" id="id1">first one</li>
+            <li class="list" id="id2">second</li>
+        </ul>
+    </div>
+
+    <script>
+        const list1 = document.getElementById("id1")
+        console.log(list1.matches(".active"))//should return true
+
+        const list2 = document.getElementById("id2")
+        console.log(list2.closest(".list"))//should return own element
+
+
+        // const box1 = document.getElementsByClassName("box"); //this will return error because getElementsByClassName will return live HTMLCollection not a single element.so we can either use
+        const box1 = document.getElementsByClassName("box")[0];
+        //or
+        // const box1 = document.querySelector(".box");
+        console.log(box1.contains(list1)) //ture
+        console.log(list2.contains(box1)) //false
+
+
+
+
+    </script>
+</body>
+</html>
