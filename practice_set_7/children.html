@@ -1,0 +1,22 @@
+<!-- create an element with 3 children. Now change the color of first and last element to green -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="child1">First Child</div>
+        <div class="child2">Second Child</div>
+        <div class="child3">Third Child</div>
+    </div>
+
+    <script>
+        document.body.firstElementChild.firstElementChild.style.color = "green"
+        document.body.firstElementChild.lastElementChild.style.color = "green"
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navElements li a{
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+        <ul class="navElements">
+            <li id="first"><a href="">Home</a></li>
+            <li id="second"><a href="">About Us</a></li>
+            <li id="third"><a href="">Projects</a></li>
+            <li id="fourth"><a href="">Contacts</a></li>
+        </ul>
+
+    <script>
+        // const lis = document.getElementsByTagName("li");
+        // for(let i=0;i<lis.length;i++){
+        //     lis[i].style.backgroundColor = "cyan";
+        // }
+        // correct but you could use below improved code
+        document.querySelectorAll("li").forEach(li =>{
+            li.style.background = "cyan";
+        })
+    </script>
+</body>
+</html>

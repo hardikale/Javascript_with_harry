@@ -1,0 +1,48 @@
+<!-- create a nav bar and change the color of its first element to red -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .navContainer{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            background-color: mediumseagreen;
+        }
+        .navElements{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 400px;
+            color: white;
+            font-weight: bold;
+        }
+        .navElements li a{
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navContainer">
+        <ul class="navElements">
+            <li id="first"><a href="">Home</a></li>
+            <li id="second"><a href="">About Us</a></li>
+            <li id="third"><a href="">Projects</a></li>
+            <li id="fourth"><a href="">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const firstE = document.getElementById("first");
+        firstE.style.color = "red";
+    </script>
+</body>
+</html>
