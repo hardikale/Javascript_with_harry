@@ -1,0 +1,50 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(196, 170, 58);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main_container{
+    padding: 20px 50px;
+    width: 500px;
+    background-color: palegoldenrod;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#emoji{
+    font-size: xx-large;
+}
+
+#joke_text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    padding: 100px 30px;
+    background-color: white;
+    border-radius: 30px;
+    height: 100px;
+    overflow: auto;
+}
+
+button{
+    margin: 30px 0px;
+    padding: 16px 30px;
+    border-radius: 100px;
+    font-size: 15px;
+    border-style: none;
+    background-color: rgb(123, 77, 197);
+    color: white;
+}
+
+button:hover{
+    background-color: rgb(77, 42, 133);
+    transform: scale(1.02);
+    transition: all 0.1s ease;
+}

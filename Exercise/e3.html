@@ -1,0 +1,49 @@
+<!-- //elem.innerHTML is used to populate a div with HTML. Search online about this method and create a website with a div tag containing a random joke given an array of jokes. Use Math.random and fetch jokes from the internet( use any website to create the array). Your website should show a random joke on every reload. Min length of your jokes array should be 10. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jokes</title>
+    <link rel="stylesheet" href="e3.css">
+</head>
+<body>
+    <div id="main_container">
+        <h1>Random Jokes</h1>
+        <p id="emoji">😂</p>
+        <div id="joke_text">Loading Joke...</div>
+        <button onclick="location.reload()">Another Joke</button>
+        <p id="footer">For another joke click the button</p>
+    </div>
+
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don't skeletons fight each other? They don't have the guts.",
+            "What do you call a fake noodle? An impasta!",
+            "How does a penguin build its house? Igloos it together!",
+            "Why did the math book look so sad? Because it had too many problems.",
+            "What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+            "How do you organize a space party? You planet!",
+            "Why don't eggs tell jokes? They'd crack each other up.",
+            "What do you call a bear with no teeth? A gummy bear!",
+            "Why did the coffee file a police report? It got mugged.",
+            "What did one ocean say to the other ocean? Nothing, they just waved.",
+            "Why did the bicycle fall over? Because it was two tired!",
+            "What do you call a fish wearing a bowtie? Sofishticated.",
+            "Why can't you hear a pterodactyl go to the bathroom? Because the P is silent."
+        ];
+
+        function getRandomJokes(){
+            const jokeIndex = Math.floor(Math.random()*jokes.length);
+            return jokes[jokeIndex]
+        }
+        window.onload = function(){
+            const selectedJoke = document.getElementById("joke_text");
+            selectedJoke.innerHTML = getRandomJokes();
+        }
+
+    </script>
+</body>
+</html>
