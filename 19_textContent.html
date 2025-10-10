@@ -1,0 +1,17 @@
+<!-- this property return all the text contents inside the elements ignoring the tags -->
+<html>
+    <body>
+        <div id="container">
+            <P>Hello World!</P>
+            <span>this is the second line</span>
+        </div>
+        <script>
+            const container = document.getElementById('container')
+            console.log(container.textContent)
+
+            container.textContent = 'this is a plain text with out html formatting'
+            console.log(container.textContent)
+            console.log(container.outerHTML)
+            </script>
+    </body>
+</html>
