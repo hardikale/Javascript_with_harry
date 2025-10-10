@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <div id="container">
+            <p>Hello World</p>
+        </div>
+        
+        <script>
+            const container = document.getElementById('container'); //this is a getter: return the descendent elements 
+            console.log(container.innerHTML)
+
+            container.innerHTML = '<p> Are you there? </p>'; // this is a setter: replaces the elements
+            console.log(container.innerHTML)
+        </script>
+    </body>
+</html>
