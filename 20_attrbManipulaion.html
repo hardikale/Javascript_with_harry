@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <button id="primary" class="secondary">Click Me</button>
+    </body>
+
+    <script>
+        const button = document.getElementById('primary')
+        console.log(button.getAttribute('class'))//reads the value of the selected attribute
+
+        button.setAttribute('class','newClassValue') //this can change or add new attribute 
+        button.setAttribute('data-status','active')//<<<< adding
+        console.log(button.outerHTML)// to show what changes setAttribute made
+        
+        button.removeAttribute('data-status') //removes the attribute
+        console.log(button.outerHTML)
+
+        if(button.hasAttribute('data-status')){
+            console.log('this has: true')
+        }else{
+            console.log('doesnot have: False')
+        }
+
+    </script>
+</html> 
