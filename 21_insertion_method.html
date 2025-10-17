@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <div class="primary">
+            <div id="secondary">
+
+            </div>
+        </div>
+
+        <script>
+            let parent = document.getElementsByClassName('primary')[0] // the index was given because "getElementsByClassName('primary')" was calling the whole HTMLCollection
+            //----------------insertAdjacentElement()--------------------
+            let newElement = document.createElement('p')
+            newElement.textContent = "this text is added afterwards!";
+
+            parent.insertAdjacentElement('afterbegin',newElement)
+            
+            let another = document.createElement('span');
+            another.textContent = "This is second element";
+
+            parent.insertAdjacentElement('afterend',another) 
+
+            //-------------------append() and prepend()----------------------
+            let newItem = document.createElement('p');
+            newItem.textContent = "appending this item";
+
+            parent.append(newItem);
+            parent.prepend("prepending this item")
+
+
+        </script>
+    </body>
+</html>
