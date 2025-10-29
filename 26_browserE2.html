@@ -1,0 +1,13 @@
+<body>
+    <div class="parent">
+        <p class="context">Click this text.</p>
+    </div>
+    <script>
+        const container = document.getElementById('parent')
+        parent.addEventListener('click',function (e) {
+            console.log('The text is clicked')
+            console.log("Event listener on:", e.currentTarget.id)
+            console.log("Event originated on:", e.target.id)
+        })
+    </script>
+</body>

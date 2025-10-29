@@ -1,0 +1,12 @@
+<button id="myButton">Click Me</button>
+
+<script>
+  const button = document.getElementById('myButton');
+
+  // The event listener is attached to the button element
+  button.addEventListener('click', function(event) {
+    // This is the event handler function
+    console.log("Button was clicked!");
+    console.log("The element that fired the event:", event.target);
+  });
+</script>
