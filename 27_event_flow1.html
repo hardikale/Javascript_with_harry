@@ -1,0 +1,31 @@
+for preventDefault <br>
+<a href="https://www.youtube.com" id="myLink">Go to YouTube</a>
+<br><br><br><br>
+
+for stopPropagation <br>
+<div id="container">
+    <button id="btn">Click This button</button>
+</div>
+
+
+<script>
+    document.getElementById("myLink").addEventListener('click',function(e){
+        e.preventDefault();
+        console.log("The default navigation is stopped.")
+    })
+
+
+
+    document.getElementById('container').addEventListener('click',function(a){
+        console.log('container is clicked')
+    })
+    document.getElementById('btn').addEventListener('click',function(b){
+        b.stopPropagation();
+        console.log('Button clicked')
+    })
+    // Clicking the button ONLY logs: "Button clicked!"
+  // If stopPropagation() was removed, it would log: "Button clicked!", then "Container clicked!"
+
+
+
+</script>   
