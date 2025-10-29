@@ -1,0 +1,26 @@
+<!-- Event Delegation (The Efficiency Pattern) -->
+<ul id="container">
+    <li>first</li>
+    <li>second</li>
+</ul>
+<button id="addbtn">add list</button>
+
+<script>
+    const list = document.getElementById('container');
+    const add = document.getElementById('addbtn')
+
+    list.addEventListener('click',function(l){
+        if(l.target.tagName === 'LI') //li is written in uppercase because tagName always return elements in uppercase
+        (
+            console.log(l.target.textContent , 'is clicked')
+        )
+    })
+
+    add.addEventListener('click',function(a){
+        const newItem = document.createElement('li');
+        newItem.textContent = 'New Item' + (list.children.length + 1);
+        list.appendChild(newItem);
+    })
+
+    //**Benefit:** The single listener on the `<ul>` automatically handles the click event for the initial items AND any **new items** added later, because the event will always bubble up to the parent `<ul>`. This saves memory and makes the code simpler.
+</script>
