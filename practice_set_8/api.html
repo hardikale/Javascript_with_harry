@@ -1,0 +1,26 @@
+<!-- simple application -->
+ <div id="container">
+    <p id="content"></p>
+ </div>
+
+ <script>
+    const url = 'https://jsonplaceholder.typicode.com/users/1'
+    const dest = document.getElementById('content')
+
+    fetch(url)
+    .then(Response =>{
+        return Response.json();
+    })
+    .then(data =>{
+        console.log(data);
+        dest.innerHTML = `
+        <p>Name = ${data.name}</p>
+        <p>Email = ${data.email}</p> `
+    })
+    .catch(error => {
+    // (OPTIONAL BUT RECOMMENDED) Handle any issues with the request (network problem, server error, etc.)
+    outputDiv.innerHTML = `<strong>Error:</strong> Could not load user data. Check console.`;
+    console.error('Fetch Failed:', error);
+  });
+ </script>
+
