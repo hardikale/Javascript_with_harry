@@ -1,0 +1,51 @@
+<style>
+    .bulbContainer{
+        height: 200px;
+        width: 200px;
+        border: solid;
+        background-color: rgba(128, 128, 128, 0.362);
+    }
+
+    .bulbOff{
+        background-color: yellow;
+    }
+
+</style>
+<body>
+    <div id="bulb" class="bulbContainer bulbOff"></div>
+    <button id="toggleBtn">Stop Bulb</button>
+</body>
+
+<script>
+
+    const bulb = document.getElementById('bulb');
+    const toggleBtn = document.getElementById('toggleBtn');
+    let intervalId = null;
+
+    function startBulb(){
+        if(intervalId === null){
+            intervalId= setInterval(() => {
+               bulb.classList.toggle('bulbOff');
+            },300);
+            toggleBtn.textContent = 'Stop Bulb';
+        }
+    }
+
+    function stopBulb(){
+        if(intervalId !== null){
+            clearInterval(intervalId);
+            intervalId = null;
+            bulb.classList.add('bulbOff')
+            toggleBtn.textContent = 'Start Bulb';
+        }
+    }
+    
+    toggleBtn.addEventListener('click',function(){
+        if(intervalId === null){
+            startBulb();
+        }else{
+            stopBulb();
+        }
+    })
+    startBulb();
+</script>
