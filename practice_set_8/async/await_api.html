@@ -1,0 +1,47 @@
+<div id="container">
+</div>
+<button id="stopBtn">Stop Polling</button>
+<script>
+    const cont = document.getElementById('container')
+    const url = 'https://jsonplaceholder.typicode.com/users/1'
+    let timeoutID;
+
+    async function fetchUserProfile(){
+        console.log(`[${new Date().toLocaleTimeString()}] Starting fetch...`);
+        try {
+            const response = await  fetch(url);
+
+            if(!response.ok){
+                throw new Error(`HTTP Error! Status:${response.status}`);
+            }
+            const data = await response.json();
+            cont.innerHTML = `
+            <h2>${data.name} (Async/Await)</h2>
+            <p>Email: ${data.email}</p>
+            <p>Company: ${data.company.name}</p>
+            <p>Fetched every 3 seconds. Last update: ${new Date().toLocaleTimeString()}</p>
+            `
+        } catch (error) {
+            cont.innerHTML= `<strong>ERROR:</strong>${error.message}. Check Console.`;
+            console.error('Fetch: Failed',error);
+            stopPolling(); //optional
+        }finally{
+            timeoutID = setTimeout(fetchUserProfile,3000)
+            console.log(`Next Fetch (ID = ${timeoutID}) scheduled.`)
+        }
+    }
+    fetchUserProfile();
+
+    function stopPolling(){
+        if(timeoutID){
+            clearTimeout(timeoutID);
+            console.log(`Polling (${timeoutID}) has been stopped.`);
+            stopBtn.disabled = true; //(optionall) to disable button after the polling is stopped.
+        }
+    }
+
+    const stopBtn = document.getElementById('stopBtn');
+    stopBtn.addEventListener('click',function (btnEvent){
+        stopPolling();
+    })
+    </script>
