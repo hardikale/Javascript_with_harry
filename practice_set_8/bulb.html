@@ -2,17 +2,38 @@
     .bulbContainer{
         height: 200px;
         width: 200px;
-        border: solid;
-        background-color: rgba(128, 128, 128, 0.362);
+        background-color: rgb(95, 94, 94);
     }
 
     .bulbOff{
         background-color: yellow;
     }
 
+    #bulb{
+        margin: 10px;
+        border-radius: 30%;
+    }
+
+    #toggleBtn{
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        width:100px;
+        height: 40px;
+        background-color: #653c20;
+    }
+    body{
+        background-color: #013f75;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 </style>
 <body>
     <div id="bulb" class="bulbContainer bulbOff"></div>
+    <br><br>
     <button id="toggleBtn">Stop Bulb</button>
 </body>
 
@@ -26,7 +47,7 @@
         if(intervalId === null){
             intervalId= setInterval(() => {
                bulb.classList.toggle('bulbOff');
-            },300);
+            },200);
             toggleBtn.textContent = 'Stop Bulb';
         }
     }
