@@ -1,0 +1,90 @@
+<!-- create a seconds clock using setInterval and Data object in javascript.
+the data object can be used to get the date time, hours and seconds which can then be updated using set interval. try to keep the UI good looking -->
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <style>
+    body{
+        background-color: #282828;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #content{
+        color: white;
+        font-size: 150px;
+    }
+    #btn{
+        width: 100px;
+        border: 0cap;
+        border-radius: 5px;
+        font-weight: bold;
+        color: white;
+        padding: 8px 20px 8px 20px;
+        background-color: rgb(108, 90, 125);
+    }
+ </style>
+</head>
+ <body>
+
+
+<div id="container">
+    <div id="content"></div>
+    <button id="btn">STOP</button>
+</div>
+
+<script>
+    const content = document.getElementById('content');
+    const btn = document.getElementById('btn');
+    let counterInterval = null;
+
+
+    function start(){
+    if(counterInterval === null){
+    counterInterval = setInterval(()=> {
+        const clock = new Date();
+        let hours = clock.getHours();
+        const min = String(clock.getMinutes()).padStart(2,'0');
+        const sec = String(clock.getSeconds()).padStart(2,'0');
+        const ampm = hours >= 12 ? 'PM':'AM';
+        hours = hours % 12 || 12;
+        hours = String(hours).padStart(2,'0');
+ 
+        console.log(`${hours}:${min}:${sec} ${ampm}`)
+        content.innerHTML = `
+        <p>${hours}:${min}:${sec} ${ampm}</p>
+        `;
+    }, 500);
+    btn.textContent = 'STOP';
+    }
+    }
+ 
+    function stop(){
+    if(counterInterval !== null){
+        clearInterval(counterInterval);
+        counterInterval = null;
+        console.log('clock is stopped.')
+        btn.textContent = 'START';
+    }
+    }
+    
+    btn.addEventListener('click',function(){
+        if(counterInterval === null){
+            start();
+        }else{
+            stop();
+        }
+    })
+
+    start();
+</script>
+    
+ </body>
